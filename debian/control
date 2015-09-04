@@ -5,11 +5,14 @@ Maintainer: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.al
 Uploaders: Balasankar C <balasankarc@autistici.org>
 Build-Depends: debhelper (>= 9~),
                gem2deb,
-               ruby-addressable (>= 2.3.7)
+               ruby-addressable (>= 2.3.7),
+               ruby-json,
+               ruby-minitest,
+               ruby-webmock
 Standards-Version: 3.9.6
 Vcs-Git: git://anonscm.debian.org/pkg-ruby-extras/ruby-json-schema.git
 Vcs-Browser: https://anonscm.debian.org/cgit/pkg-ruby-extras/ruby-json-schema.git
-Homepage: http://github.com/ruby-json-schema/json-schema/tree/master
+Homepage: http://github.com/ruby-json-schema/json-schema/
 Testsuite: autopkgtest-pkg-ruby
 XS-Ruby-Versions: all
 
@@ -18,7 +21,14 @@ Architecture: all
 XB-Ruby-Versions: ${ruby:Versions}
 Depends: ruby | ruby-interpreter,
          ruby-addressable (>= 2.3.7),
+         ruby-json,
+         ruby-multi-json,
+         ruby-uuidtools,
+         ruby-yajl,
          ${misc:Depends},
          ${shlibs:Depends}
 Description: Ruby JSON Schema Validator
- <insert long description, indented with spaces>
+ This library is intended to provide Ruby with an interface for validating JSON 
+ objects against a JSON schema conforming to JSON Schema Draft 4. Legacy 
+ support for JSON Schema Draft 3, JSON Schema Draft 2, and JSON Schema Draft 1 
+ is also included.
